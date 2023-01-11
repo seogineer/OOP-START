@@ -28,4 +28,8 @@ public class Product {
     public void minusStock() {
         stock -= 1;
     }
+
+    public void payBy(GiftCard giftCard) {
+        giftCard.minus(price);
+    }
 }
