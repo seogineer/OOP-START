@@ -21,8 +21,8 @@ public class Product {
         return price;
     }
 
-    public boolean isStockLessThanOne() {
-        return stock < 1;
+    public boolean isSoldOut() {
+        return stock < 5;
     }
 
     public void minusStock() {
