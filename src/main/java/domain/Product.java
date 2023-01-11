@@ -21,15 +21,15 @@ public class Product {
         return price;
     }
 
-    public boolean isSoldOut() {
+    private boolean isSoldOut() {
         return stock < 5;
     }
 
-    public boolean isPriceUnderMinimum() {
+    private boolean isPriceUnderMinimum() {
         return price < 1000;
     }
 
-    public void minusStock() {
+    private void minusStock() {
         if (isSoldOut() && isPriceUnderMinimum()) {
             throw new RuntimeException("주문할 수 없는 상품입니다.");
         }
@@ -38,5 +38,13 @@ public class Product {
 
     public void payBy(GiftCard giftCard) {
         giftCard.minus(price);
+    }
+
+    public void sellTo(Customer customer) {
+        // 상품 관리 로직
+        minusStock();
+
+        // 상품 결제 로직
+        customer.payFor(this);
     }
 }
