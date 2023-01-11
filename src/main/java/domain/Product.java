@@ -20,4 +20,12 @@ public class Product {
     public int getPrice() {
         return price;
     }
+
+    public boolean isStockLessThanOne() {
+        return stock < 1;
+    }
+
+    public void minusStock() {
+        stock -= 1;
+    }
 }
