@@ -1,17 +1,13 @@
 package domain;
 
 public class Customer {
-    private GiftCard giftCard;
+    private Money money;
 
-    public Customer(final GiftCard giftCard) {
-        this.giftCard = giftCard;
-    }
-
-    public GiftCard getGiftCard() {
-        return giftCard;
+    public Customer(GiftCard giftCard, Point point) {
+        this.money = new Money(giftCard, point);
     }
 
     public void payFor(Product product) {
-        product.payBy(giftCard);
+        product.payBy(money);
     }
 }
