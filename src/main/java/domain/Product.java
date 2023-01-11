@@ -36,8 +36,8 @@ public class Product {
         stock -= 1;
     }
 
-    public void payBy(GiftCard giftCard) {
-        giftCard.minus(price);
+    public void payBy(Money money) {
+        money.minus(price);
     }
 
     public void sellTo(Customer customer) {
